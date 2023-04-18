@@ -8,9 +8,9 @@ public class controller : MonoBehaviour
     public CharacterController controller1;
 
     public float speed = 10;
+    public float gravity = 5;
+    
 
-
-    // Update is called once per frame
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
