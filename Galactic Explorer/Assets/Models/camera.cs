@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
+    public Transform player;
+    public Vector3 raznica;
 
-    public CharacterController camera1;
+    void Start()
+    {
+        raznica = transform.position - player.position;
+    }
 
-    public float speed = 5;
-
-
-    // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z  = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-        camera1.Move(move*speed*Time.deltaTime);
+        transform.position = player.position + raznica;
     }
 }
+
+
