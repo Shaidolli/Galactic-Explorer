@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63e4f892afb52814bade1de074a87dc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 3.27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63e4f892afb52814bade1de074a87dc9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -204,6 +204,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e4f892afb52814bade1de074a87dc9, type: 3}
+--- !u!1 &620026172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620026173}
+  m_Layer: 0
+  m_Name: grcheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &620026173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620026172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 676529350}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676529345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 63e4f892afb52814bade1de074a87dc9, type: 3}
@@ -220,13 +251,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.03
+  m_Height: 0.028457282
   m_Radius: 0.009
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Center: {x: 0, y: 0.013, z: 0}
 --- !u!114 &676529347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +272,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller1: {fileID: 676529346}
   speed: 5
-  gravity: 5
+  gravity: -1
+  jumpHeight: 3
+  groundCheck: {fileID: 620026173}
+  groundDistance: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &676529350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 63e4f892afb52814bade1de074a87dc9, type: 3}
@@ -263,19 +300,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &676529352
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676529345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.018, y: 0.027007746, z: 0.0076027545}
-  m_Center: {x: 0, y: 0.012837378, z: 0.0018013829}
 --- !u!1 &939480959
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +312,6 @@ GameObject:
   - component: {fileID: 939480961}
   - component: {fileID: 939480960}
   - component: {fileID: 939480963}
-  - component: {fileID: 939480964}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -355,7 +378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939480959}
   m_LocalRotation: {x: 0.13327451, y: -0, z: -0, w: 0.9910792}
-  m_LocalPosition: {x: 7, y: 3.5, z: -13.75}
+  m_LocalPosition: {x: 7, y: 6.291, z: -13.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -376,24 +399,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 676529350}
   raznica: {x: 0, y: 0, z: 0}
---- !u!143 &939480964
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939480959}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 0
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1297069522
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +411,7 @@ GameObject:
   - component: {fileID: 1297069525}
   - component: {fileID: 1297069524}
   - component: {fileID: 1297069523}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: test ground
   m_TagString: ground
   m_Icon: {fileID: 0}
