@@ -6,9 +6,11 @@ public class PickUp : MonoBehaviour
 {
 
     public GameObject blasterONplayer;
+    public GameObject blasterOnGround;
     void Start()
     {
         blasterONplayer.SetActive(false);
+        blasterOnGround.SetActive(true);
     }
 
     private void OnTriggerStay(Collider other)
@@ -16,6 +18,7 @@ public class PickUp : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             blasterONplayer.SetActive(true);
+            blasterOnGround.SetActive(false);
         }
     }
 

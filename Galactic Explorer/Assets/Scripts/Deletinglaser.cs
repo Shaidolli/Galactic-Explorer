@@ -15,5 +15,6 @@ public class Deletinglaser : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         healthrobot.health -= damage;
+        Destroy(gameObject);
     }
 }
