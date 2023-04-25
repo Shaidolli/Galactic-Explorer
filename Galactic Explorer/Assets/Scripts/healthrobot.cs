@@ -9,7 +9,6 @@ public class healthrobot : MonoBehaviour
     void Start()
     {
         health = 100f;
-        
     }
 
     void Update()
@@ -18,19 +17,7 @@ public class healthrobot : MonoBehaviour
         {
             Destroy(gameObject);
         }
-/*
-        void detectedCOl(Collider other)
-        {
-            if(other.gameObject.tag == "laser")
-            {
-                health -= Deletinglaser.damage;
-                if(health <= 0)
-                {
-                    Destroy(gameObject);
-                }
-            }
-        }
-*/
+
     }
     
 }
